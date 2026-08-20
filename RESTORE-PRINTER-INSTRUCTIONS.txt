@@ -1,0 +1,31 @@
+Restoring the Brother PT-D600 for P-touch Editor / normal printing
+====================================================================
+
+Printing from the GFL web app rebinds the printer's USB driver to
+libusbK, which disconnects it from the normal Windows printer/spooler
+path that P-touch Editor needs. There's no reliable one-click way to
+switch it back automatically (see print-agent/agent.md for why), so
+when you're done printing from GFL, do this:
+
+1. Double-click this file to jump straight to Device Manager (or open
+   it yourself: Win+X -> Device Manager).
+
+2. Find the printer. It'll be listed under "libusbK USB Devices" as
+   "PT-D600" (NOT under "Printers" -- that's the point of this fix).
+
+3. Right-click it -> Update driver.
+
+4. Choose "Browse my computer for drivers".
+
+5. Choose "Let me pick from a list of available drivers on my
+   computer".
+
+6. Select the "USB Printing Support" entry in the list -> Next.
+
+7. Wait for it to finish. The device should now reappear under
+   "Printers" and P-touch Editor / normal Windows printing will work
+   again.
+
+To go back to GFL printing later, just run "Print with GFL" again --
+that part re-applies the libusbK driver automatically, one click, no
+Device Manager needed.

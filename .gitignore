@@ -76,6 +76,10 @@ Thumbs.db
 # Local debug
 localdebug/
 
+# Runtime log from print-agent/switch-driver.ps1 (machine-specific: username,
+# device instance IDs) -- not source, regenerated each time the script runs.
+print-agent/switch-driver.log
+
 # hardware-gen pipeline artifacts (generated)
 # build/ (STEP solids) is not source-controlled, but output/*.svg IS committed
 # so GitHub Pages can serve the rendered geometry (see agents.md CI/CD section).

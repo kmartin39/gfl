@@ -7,7 +7,7 @@
 # ]
 # ///
 """
-Gridfinity Label — local print agent for Brother PT-P710BT.
+Gridfinity Label — local print agent for Brother PT-P710BT / PT-D600.
 
 Usage:
     uv run agent.py [--port 9100]
@@ -18,14 +18,27 @@ The agent requires PyUSB on all platforms.
 
 Setup (Windows — one-time):
     1. Install UV:  winget install astral-sh.uv
-    2. Run Zadig, select the PT-P710BT, and replace the driver with `libusbK`.
+    2. Run Zadig, select the P-touch printer, and replace the driver with `libusbK`.
     3. uv run agent.py
 
 Setup (Linux — one-time):
     Create /etc/udev/rules.d/99-brother-pt.rules:
         SUBSYSTEM=="usb", ATTRS{idVendor}=="04f9", ATTRS{idProduct}=="20af", MODE="0666"
+        SUBSYSTEM=="usb", ATTRS{idVendor}=="04f9", ATTRS{idProduct}=="2074", MODE="0666"
     Then: sudo udevadm control --reload-rules && sudo udevadm trigger
     uv run agent.py
+
+Troubleshooting — P-touch Editor says "cannot communicate with the printer"
+(observed with the PT-D600 on macOS):
+    This is printer behaviour, not caused by this agent — it occurs even if
+    the agent was never run. After the PT-D600 auto-powers off, its USB
+    interface stays electrically present, so the OS keeps the stale device
+    entry and never re-enumerates it. Once the printer is turned back on,
+    this agent still prints (it re-claims the device from scratch on every
+    job), but P-touch Editor can no longer communicate with it. Power-cycling
+    the printer with the cable attached does NOT clear the state. To recover
+    (no reboot needed): quit P-touch Editor, unplug the USB cable, power the
+    printer off and back on, replug the cable, then restart P-touch Editor.
 
 The agent listens on http://localhost:9100 and accepts requests from the web app.
 Keep it running while printing; stop with Ctrl-C.
@@ -36,7 +49,7 @@ Keep it running while printing; stop with Ctrl-C.
 # deliberately when cutting a print-agent release. Unlike the web app's version,
 # the agent has no deploy/build step to derive a version into, so this stays a
 # plain hand-set release number.
-__version__ = "0.4.11"
+__version__ = "0.4.12"
 
 import argparse
 import base64
@@ -58,8 +71,13 @@ except ImportError:
 # ── Printer constants ──────────────────────────────────────────────────────────
 
 BROTHER_VID     = 0x04F9
-PT_P710BT_PID   = 0x20AF
-BROTHER_MODEL   = "PT-P710BT"
+# Supported Brother P-touch models, keyed by USB product ID. All share the
+# same 128-dot / 180-dpi raster protocol with TIFF PackBits compression, so
+# the same job bytes drive any of them.
+SUPPORTED_PIDS  = {
+    0x20AF: "PT-P710BT",
+    0x2074: "PT-D600",
+}
 PRINT_HEAD_DOTS  = 128
 PRINT_DPI_STD    = 180   # standard quality (180×180 dpi)
 PRINT_DPI_HIGH   = 360   # high quality (180×360 dpi, double feed stepping)
@@ -214,12 +232,20 @@ def _find_usb_printer():
     global _usb_find_error
     try:
         import usb.core
-        dev = usb.core.find(idVendor=BROTHER_VID, idProduct=PT_P710BT_PID)
+        dev = usb.core.find(
+            idVendor=BROTHER_VID,
+            custom_match=lambda d: d.idProduct in SUPPORTED_PIDS,
+        )
         _usb_find_error = "" if dev is not None else "Device not found (check USB cable and Zadig driver)"
         return dev
     except Exception as e:
         _usb_find_error = str(e)
         return None
+
+
+def _model_name(dev) -> str:
+    """Human-readable model name for a found device."""
+    return SUPPORTED_PIDS.get(dev.idProduct, "Brother P-touch") if dev else "unknown"
 
 
 def _drain_ep_in(ep_in, max_reads: int = 16):
@@ -333,7 +359,7 @@ def send_job_usb(job: bytes) -> dict:
                     if status[18] == 0x06 and status[19] == 0x00:
                         break  # back to idle — all pages done
 
-            return {"success": True, "printer": BROTHER_MODEL}
+            return {"success": True, "printer": _model_name(dev)}
         finally:
             usb.util.dispose_resources(dev)
     except Exception as e:
@@ -342,7 +368,7 @@ def send_job_usb(job: bytes) -> dict:
 
 def status_usb() -> dict:
     dev = _find_usb_printer()
-    result: dict = {"ready": dev is not None, "printer": BROTHER_MODEL if dev else None}
+    result: dict = {"ready": dev is not None, "printer": _model_name(dev) if dev else None}
     if dev is None and _usb_find_error:
         result["error"] = _usb_find_error
     return result
@@ -457,7 +483,7 @@ def main():
             if "NoBackendError" in status["error"] or "No backend" in status["error"]:
                 print()
                 print("  PyUSB has no libusb backend. Fix:")
-                print("    Re-run Zadig, select the PT-P710BT, and install 'libusbK'.")
+                print("    Re-run Zadig, select the P-touch printer, and install 'libusbK'.")
                 print("    libusbK is natively supported by PyUSB on Windows — no extra DLL needed.")
         else:
             print("  → Check USB connection and udev rules (Linux) or Zadig driver (Windows).")

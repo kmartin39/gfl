@@ -67,10 +67,16 @@ function packBits(data) {
   return new Uint8Array(out);
 }
 // Pixel-crunch a rendered label canvas → array of 16-byte 1-bit raster rows.
+// Feed width is derived from the canvas's own pixel dimensions (not the
+// current label-length setting) so batch/queue items rendered at a
+// different length than what's currently in the UI still print correctly.
 async function canvasToRasterRows(canvas, tapeHeightMm, dpi) {
   const printableDots = TAPE_PRINTABLE_DOTS[tapeHeightMm] ?? 70;
   const dotOffset = (PRINT_HEAD_DOTS - printableDots) >> 1;
-  const feedDots  = Math.round((LABEL_WIDTH_MM - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT) / (25.4 / dpi));
+
+  const scale = getPrintScale();
+  const printableWidthPx = canvas.width - (LABEL_MARGIN_LEFT + LABEL_MARGIN_RIGHT) * scale;
+  const feedDots = Math.round((printableWidthPx / scale) / (25.4 / dpi));
 
   const tmp = document.createElement('canvas');
   tmp.width  = feedDots;
@@ -79,7 +85,6 @@ async function canvasToRasterRows(canvas, tapeHeightMm, dpi) {
   ctx.fillStyle = '#fff';
   ctx.fillRect(0, 0, feedDots, printableDots);
 
-  const scale = getPrintScale();
   // Cross-feed (tape width) is always 180 DPI regardless of quality setting.
   // The printable area is smaller than the full tape height, so crop the
   // source to only the printable portion to preserve the correct aspect ratio.
@@ -87,7 +92,7 @@ async function canvasToRasterRows(canvas, tapeHeightMm, dpi) {
   const topCropMm = (tapeHeightMm - printableHeightMm) / 2;
   ctx.drawImage(canvas,
     LABEL_MARGIN_LEFT * scale, (LABEL_MARGIN_TOP + topCropMm) * scale,
-    (LABEL_WIDTH_MM - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT) * scale, printableHeightMm * scale,
+    printableWidthPx, printableHeightMm * scale,
     0, 0, feedDots, printableDots
   );
 

@@ -196,9 +196,10 @@ function selectStandard(s) {
   }
   box.hidden = false;
 
-  // Show ISO/DIN preference if standard has both
-  const systems = new Set(s.designations.map(d => d.system));
-  prefGroup.hidden = !(systems.has('ISO') && systems.has('DIN'));
+  // Show standard-display preference whenever a standard is selected.
+  // (Auto/ISO/DIN only differ when a standard has both codes, but None is
+  // always meaningful — it hides the designation text entirely.)
+  prefGroup.hidden = false;
 
   initStandardViews(s);
   renderViewChips();
@@ -477,6 +478,7 @@ function clearCustomIcon() {
 }
 
 function buildDesignationText(standard, preference) {
+  if (preference === 'none') return '';
   const designations = standard.designations;
   if (preference === 'auto') {
     // Prefer ISO when present, otherwise fall back to whatever exists.
@@ -534,6 +536,7 @@ function buildLabelContent() {
     qrCodeUrl: document.getElementById('qrUrl').value.trim(),
     standard: selectedStandard,
     selectedViews: selectedViews.length ? [...selectedViews] : null,
+    lineThickness: getLineThickness(),
   };
 }
 const MDI_VERSION  = '7.4.47';
