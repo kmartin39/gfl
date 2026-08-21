@@ -54,3 +54,18 @@ standards:
       - size: 1/4in
         length: 1
         views: [iso, side]
+
+  # id uppercased = ISO7049-C: the workbench splits ISO 7049 by thread-cutting
+  # point type (C = pointed, self-tapping into thin sheet metal -- the common
+  # "pan-head sheet metal screw"; F = blunt, pre-drilled stock; R = a third
+  # point-type variant). The -C suffix is a workbench selector, not part of
+  # the printed designation, so the code below is plain "7049".
+  - id: iso7049-c
+    description: "Cross recessed pan head tapping screws, thread type C (pointed, self-tapping)"
+    designations:
+      - { system: ISO, code: "7049" }
+      - { system: DIN, code: "7981" }
+    renders:
+      - size: ST4.8
+        length: 19
+        views: [iso, top, side]
