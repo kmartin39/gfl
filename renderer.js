@@ -111,6 +111,8 @@ async function renderLabel(canvas, { widthMm, heightMm, scale, content }) {
       text: content.primaryText,
       x: layout.primary.x * scale,
       y: layout.primary.y * scale,
+      width: layout.primary.width * scale,
+      align: content.textAlign,
       fontSize: layout.primary.fontSize * scale,
       fontFamily: FONT_PRIMARY.family,
       fontWeight: FONT_PRIMARY.weight,
@@ -123,6 +125,8 @@ async function renderLabel(canvas, { widthMm, heightMm, scale, content }) {
       text: content.secondaryText,
       x: layout.secondary.x * scale,
       y: layout.secondary.y * scale,
+      width: layout.secondary.width * scale,
+      align: content.textAlign,
       fontSize: layout.secondary.fontSize * scale,
       fontFamily: FONT_SECONDARY.family,
       fontWeight: FONT_SECONDARY.weight,
@@ -246,7 +250,7 @@ async function computeLayout(ctx, content, pw, ph, scale) {
 function computeTextLayout(ctx, text, x, y, maxW, maxH, scale, font) {
   if (!text) return null;
   const fontSize = fitFontSize(ctx, text, maxW * scale, maxH * scale, font) / scale;
-  return { x, y, fontSize };
+  return { x, y, fontSize, width: maxW };
 }
 
 function fitFontSize(ctx, text, maxWidthPx, maxHeightPx, font) {
@@ -263,16 +267,19 @@ function fitFontSize(ctx, text, maxWidthPx, maxHeightPx, font) {
 }
 // ─── Drawing ──────────────────────────────────────────────────────────────────
 
-async function drawText(ctx, { text, x, y, fontSize, fontFamily, fontWeight }) {
+async function drawText(ctx, { text, x, y, width = 0, align = 'left', fontSize, fontFamily, fontWeight }) {
   try {
     await document.fonts.load(`${fontWeight} ${fontSize}px "${fontFamily}"`, text);
   } catch { /* ignore font load errors */ }
   ctx.save();
   ctx.font = `${fontWeight} ${fontSize}px "${fontFamily}"`;
   ctx.fillStyle = '#000000';
-  ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
-  ctx.fillText(text, x, y);
+  let drawX = x;
+  if (align === 'center') { ctx.textAlign = 'center'; drawX = x + width / 2; }
+  else if (align === 'right') { ctx.textAlign = 'right'; drawX = x + width; }
+  else { ctx.textAlign = 'left'; }
+  ctx.fillText(text, drawX, y);
   ctx.restore();
 }
 

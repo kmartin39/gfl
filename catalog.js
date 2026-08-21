@@ -537,6 +537,7 @@ function buildLabelContent() {
     standard: selectedStandard,
     selectedViews: selectedViews.length ? [...selectedViews] : null,
     lineThickness: getLineThickness(),
+    textAlign: getTextAlign(),
   };
 }
 const MDI_VERSION  = '7.4.47';

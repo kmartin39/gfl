@@ -73,6 +73,9 @@
         <input type="radio" name="lineThickness" value="1.5" />
         <input type="radio" name="lineThickness" value="2" />
         <input type="radio" name="lineThickness" value="3" />
+        <input type="radio" name="textAlign" value="left" checked />
+        <input type="radio" name="textAlign" value="center" />
+        <input type="radio" name="textAlign" value="right" />
         <input type="checkbox" id="showQR" />
         <input type="checkbox" id="showMargins" checked />
         <!-- imageSourceDrawingOption required by app.js -->
@@ -235,6 +238,15 @@
           <div class="seg-ctrl" id="iconPosSeg" role="radiogroup" aria-label="Icon position">
             <button class="seg-btn seg-sm" data-value="left" role="radio" aria-checked="false">Left</button>
             <button class="seg-btn seg-sm seg-active" data-value="right" role="radio" aria-checked="true">Right</button>
+          </div>
+        </div>
+
+        <div class="icon-ctrl-row">
+          <span class="mini-label">Text Align</span>
+          <div class="seg-ctrl" id="textAlignSeg" role="radiogroup" aria-label="Text alignment">
+            <button class="seg-btn seg-sm seg-active" data-value="left"   role="radio" aria-checked="true">Left</button>
+            <button class="seg-btn seg-sm"             data-value="center" role="radio" aria-checked="false">Center</button>
+            <button class="seg-btn seg-sm"             data-value="right"  role="radio" aria-checked="false">Right</button>
           </div>
         </div>
 

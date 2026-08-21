@@ -209,6 +209,12 @@ function initSegmentedControls() {
     scheduleRender();
   });
 
+  // Text alignment (left / center / right)
+  initSegCtrl('textAlignSeg', value => {
+    document.querySelector(`input[name="textAlign"][value="${value}"]`).checked = true;
+    scheduleRender();
+  });
+
   // Drawing line thickness (drawing views only)
   initSegCtrl('lineThicknessSeg', value => {
     document.querySelector(`input[name="lineThickness"][value="${value}"]`).checked = true;
@@ -824,6 +830,10 @@ function getStdPref() {
 
 function getLineThickness() {
   return parseFloat(document.querySelector('input[name="lineThickness"]:checked')?.value) || 1;
+}
+
+function getTextAlign() {
+  return document.querySelector('input[name="textAlign"]:checked')?.value || 'left';
 }
 
 function getPrintScale() {
