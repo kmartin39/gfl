@@ -728,6 +728,25 @@ select.form-input {
 .ht-btn.ht-active { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
 .ht-sep { color: var(--rule); font-size: 0.82rem; }
 
+.preview-hdr-sep {
+  width: 1px;
+  align-self: stretch;
+  margin: 2px 0;
+  background: var(--rule);
+  flex-shrink: 0;
+}
+
+.length-input {
+  width: 3.4em;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 1px 4px;
+}
+
 /* ─── Stage (dot-grid canvas area) ──────────────────────────────────────────── */
 
 .stage {

@@ -68,6 +68,11 @@
         <input type="radio" name="stdPref"      value="auto" checked />
         <input type="radio" name="stdPref"      value="ISO" />
         <input type="radio" name="stdPref"      value="DIN" />
+        <input type="radio" name="stdPref"      value="none" />
+        <input type="radio" name="lineThickness" value="1"   checked />
+        <input type="radio" name="lineThickness" value="1.5" />
+        <input type="radio" name="lineThickness" value="2" />
+        <input type="radio" name="lineThickness" value="3" />
         <input type="checkbox" id="showQR" />
         <input type="checkbox" id="showMargins" checked />
         <!-- imageSourceDrawingOption required by app.js -->
@@ -129,7 +134,8 @@
                 <b>Auto</b> — primary designation only<br>
                 <b>ISO</b> — ISO code only<br>
                 <b>DIN</b> — DIN code only<br>
-                Only shown when a standard has both codes.
+                <b>None</b> — hide the standard text, icon only<br>
+                ISO/DIN only shown when a standard has both codes.
               </span>
             </span>
           </div>
@@ -137,6 +143,7 @@
             <button class="seg-btn seg-sm seg-active" data-value="auto" role="radio" aria-checked="true">Auto</button>
             <button class="seg-btn seg-sm"             data-value="ISO"  role="radio" aria-checked="false">ISO</button>
             <button class="seg-btn seg-sm"             data-value="DIN"  role="radio" aria-checked="false">DIN</button>
+            <button class="seg-btn seg-sm"             data-value="none" role="radio" aria-checked="false">None</button>
           </div>
         </div>
 
@@ -231,6 +238,17 @@
           </div>
         </div>
 
+        <!-- Line thickness (drawing views only) -->
+        <div class="icon-ctrl-row" id="lineThicknessGroup">
+          <span class="mini-label">Thickness</span>
+          <div class="seg-ctrl" id="lineThicknessSeg" role="radiogroup" aria-label="Drawing line thickness">
+            <button class="seg-btn seg-sm seg-active" data-value="1"   role="radio" aria-checked="true">Thin</button>
+            <button class="seg-btn seg-sm"             data-value="1.5" role="radio" aria-checked="false">Regular</button>
+            <button class="seg-btn seg-sm"             data-value="2"   role="radio" aria-checked="false">Bold</button>
+            <button class="seg-btn seg-sm"             data-value="3"   role="radio" aria-checked="false">Heavy</button>
+          </div>
+        </div>
+
         <!-- MDI picker -->
         <div id="mdiPickerGroup" hidden>
           <div class="search-container">
@@ -307,6 +325,17 @@
             <button class="view-chip" id="chipQR">QR</button>
             <button class="view-chip chip-active" id="chipMargins">MARGINS</button>
           </div>
+          <div class="height-toggle">
+            <span class="mini-label">Length</span>
+            <input type="number" id="labelLengthInput" class="length-input" value="35" min="10" max="300" step="1" aria-label="Label length in mm" />
+            <span class="mini-label">mm</span>
+            <button type="button" class="ht-btn ht-active" data-u="1" title="1 Gridfinity unit = 35mm">1u</button>
+            <span class="ht-sep">/</span>
+            <button type="button" class="ht-btn" data-u="2" title="2 Gridfinity units = 77mm">2u</button>
+            <span class="ht-sep">/</span>
+            <button type="button" class="ht-btn" data-u="3" title="3 Gridfinity units = 118mm">3u</button>
+          </div>
+          <span class="preview-hdr-sep" aria-hidden="true"></span>
           <div class="height-toggle">
             <span class="mini-label">Height</span>
             <button class="ht-btn ht-active" data-h="12">12mm</button>

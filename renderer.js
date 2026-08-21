@@ -12,7 +12,7 @@ async function render() {
   const heightMm = getLabelHeight();
 
   await renderLabel(canvas, {
-    widthMm: LABEL_WIDTH_MM - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT,
+    widthMm: getLabelLength() - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT,
     heightMm,
     scale,
     content,
@@ -79,8 +79,9 @@ async function renderLabel(canvas, { widthMm, heightMm, scale, content }) {
       // Load every view and lay them out side by side in columns whose widths
       // are proportional to each view's aspect ratio, so none overlap.
       const imgs = [];
+      const thickness = content.lineThickness ?? 1;
       for (const url of urls) {
-        try { imgs.push(await loadImage(assetUrl(url))); }
+        try { imgs.push(await loadDrawingImage(assetUrl(url), thickness)); }
         catch { /* image failed to load, skip */ }
       }
       if (imgs.length) {
@@ -285,6 +286,30 @@ function loadImage(src) {
   });
 }
 
+// Loads a hardware-standard drawing SVG, optionally scaling its baked-in
+// stroke-width by `thicknessScale` (1 = unmodified/thinnest). Each generated
+// SVG has exactly one `stroke-width="…"` attribute on its wrapping <g>, so a
+// single regex replace on the fetched text is enough -- no SVG DOM needed.
+async function loadDrawingImage(url, thicknessScale) {
+  const key = `${url}::${thicknessScale}`;
+  if (drawingImageCache.has(key)) return drawingImageCache.get(key);
+
+  if (thicknessScale === 1) {
+    const img = await loadImage(url);
+    drawingImageCache.set(key, img);
+    return img;
+  }
+
+  const res = await fetch(url);
+  const svgText = await res.text();
+  const scaledText = svgText.replace(/stroke-width="([\d.]+)"/,
+    (_, w) => `stroke-width="${(parseFloat(w) * thicknessScale).toFixed(4)}"`);
+  const blobUrl = URL.createObjectURL(new Blob([scaledText], { type: 'image/svg+xml' }));
+  const img = await loadImage(blobUrl);
+  drawingImageCache.set(key, img);
+  return img;
+}
+
 async function getImageAspectRatio(src) {
   if (!src) return 1;
   if (aspectCache.has(src)) return aspectCache.get(src);
@@ -316,12 +341,13 @@ async function getPrintCanvas() {
   const heightMm = getLabelHeight();
 
   const canvas = document.createElement('canvas');
-  await renderLabel(canvas, { widthMm: LABEL_WIDTH_MM - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT, heightMm, scale, content });
+  await renderLabel(canvas, { widthMm: getLabelLength() - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT, heightMm, scale, content });
   return canvas;
 }
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-const LABEL_WIDTH_MM = 35;          // Total physical label length (cut-to-cut)
+// Total physical label length (cut-to-cut) is user-configurable via
+// getLabelLength() (labelLengthInput in the UI), default 35mm.
 const LABEL_MARGIN_LEFT = 2;        // mm leading margin (hardware, via ESC i d)
 const LABEL_MARGIN_RIGHT = 3;       // mm trailing margin (printer minimum cut margin)
 const LABEL_MARGIN_TOP = 1;         // mm top margin
@@ -333,6 +359,7 @@ const VIEW_GAP_MM = 0.6;            // gap between side-by-side hardware views
 
 const imageCache = new Map();
 const aspectCache = new Map();
+const drawingImageCache = new Map();
 // ─── QR Code ──────────────────────────────────────────────────────────────────
 
 const qrCache = new Map();

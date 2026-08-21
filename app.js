@@ -49,6 +49,7 @@ async function init() {
   initSegmentedControls();
   initViewChips();
   initHeightToggle();
+  initLengthInput();
   initOutputTabs();
   renderFavoritesPanel();
   updateStarButtons();
@@ -207,6 +208,12 @@ function initSegmentedControls() {
     iconPosition = value;
     scheduleRender();
   });
+
+  // Drawing line thickness (drawing views only)
+  initSegCtrl('lineThicknessSeg', value => {
+    document.querySelector(`input[name="lineThickness"][value="${value}"]`).checked = true;
+    scheduleRender();
+  });
 }
 
 function initSegCtrl(id, onChange) {
@@ -265,14 +272,51 @@ function initViewChips() {
 // ─── Height Toggle ────────────────────────────────────────────────────────────
 
 function initHeightToggle() {
-  document.querySelectorAll('.ht-btn').forEach(btn => {
+  document.querySelectorAll('.ht-btn[data-h]').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.ht-btn').forEach(b => b.classList.remove('ht-active'));
+      document.querySelectorAll('.ht-btn[data-h]').forEach(b => b.classList.remove('ht-active'));
       btn.classList.add('ht-active');
       document.querySelector(`input[name="labelHeight"][value="${btn.dataset.h}"]`).checked = true;
       onLabelHeightChange();
     });
   });
+}
+
+// ─── Length Input ─────────────────────────────────────────────────────────────
+
+const LABEL_LENGTH_UNITS_MM = { 1: 35, 2: 77, 3: 118 }; // Gridfinity units → label length
+const LABEL_LENGTH_DEFAULT_MM = LABEL_LENGTH_UNITS_MM[1];
+
+function initLengthInput() {
+  const input = document.getElementById('labelLengthInput');
+  if (!input) return;
+  input.addEventListener('change', onLabelLengthChange);
+
+  document.querySelectorAll('.ht-btn[data-u]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      input.value = LABEL_LENGTH_UNITS_MM[btn.dataset.u];
+      onLabelLengthChange();
+    });
+  });
+}
+
+function updateLengthUnitButtons(v) {
+  document.querySelectorAll('.ht-btn[data-u]').forEach(btn => {
+    btn.classList.toggle('ht-active', LABEL_LENGTH_UNITS_MM[btn.dataset.u] === v);
+  });
+}
+
+function onLabelLengthChange() {
+  const input = document.getElementById('labelLengthInput');
+  const min = parseFloat(input.min) || 10;
+  const max = parseFloat(input.max) || 300;
+  let v = parseFloat(input.value);
+  if (!Number.isFinite(v)) v = LABEL_LENGTH_DEFAULT_MM;
+  v = Math.round(v);
+  v = Math.min(max, Math.max(min, v));
+  input.value = v;
+  updateLengthUnitButtons(v);
+  onLabelHeightChange(); // refreshes labelSizeInfo / labelPxInfo, shared with height changes
 }
 
 // ─── Output Tabs ──────────────────────────────────────────────────────────────
@@ -369,7 +413,7 @@ function renderBatchQueue(lengths) {
       <td>${escHtml(name)}</td>
       <td>${escHtml(len)}${escHtml(unit)}</td>
       <td>${escHtml(note || '—')}</td>
-      <td>${LABEL_WIDTH_MM}×${heightMm}mm</td>
+      <td>${getLabelLength()}×${heightMm}mm</td>
       <td class="bq-del" data-idx="${i}">×</td>
     `;
     tr.addEventListener('click', e => {
@@ -424,6 +468,7 @@ async function addToQueue() {
           name: content.primaryText || '(untitled)',
           note: content.secondaryText || '',
           heightMm: getLabelHeight(),
+          widthMm: getLabelLength(),
         });
       }
       batchIndex = savedBatchIndex;
@@ -435,6 +480,7 @@ async function addToQueue() {
         name: content.primaryText || '(untitled)',
         note: content.secondaryText || '',
         heightMm: getLabelHeight(),
+        widthMm: getLabelLength(),
       });
     }
     renderPrintQueue();
@@ -474,7 +520,7 @@ function renderPrintQueue() {
       <td>${String(i + 1).padStart(2, '0')}</td>
       <td>${escHtml(item.name)}</td>
       <td>${escHtml(item.note || '—')}</td>
-      <td>${LABEL_WIDTH_MM}×${item.heightMm}mm</td>
+      <td>${item.widthMm ?? getLabelLength()}×${item.heightMm}mm</td>
       <td class="bq-del" data-idx="${i}">×</td>
     `;
     tr.querySelector('.bq-del').addEventListener('click', e => {
@@ -726,7 +772,8 @@ function onMeasureSystemChange() {
 
 function onLabelHeightChange() {
   const h = getLabelHeight();
-  document.getElementById('labelSizeInfo').textContent = `${LABEL_WIDTH_MM}.0 × ${h}.0 mm`;
+  const w = getLabelLength();
+  document.getElementById('labelSizeInfo').textContent = `${w} × ${h}.0 mm`;
   updateLabelPxInfo();
   scheduleRender();
 }
@@ -734,7 +781,7 @@ function onLabelHeightChange() {
 function updateLabelPxInfo() {
   const scale = getPrintScale();
   const h = getLabelHeight();
-  const pw = LABEL_WIDTH_MM * scale;
+  const pw = getLabelLength() * scale;
   const ph = (h + LABEL_MARGIN_TOP * 2) * scale;
   const el = document.getElementById('labelPxInfo');
   if (el) el.textContent = `${Math.round(pw)} × ${Math.round(ph)} px @ ${scale} px/mm`;
@@ -744,6 +791,7 @@ function onImageSourceChange() {
   const src = getImageSource();
   document.getElementById('mdiPickerGroup').hidden    = src !== 'mdi';
   document.getElementById('customPickerGroup').hidden = src !== 'custom';
+  document.getElementById('lineThicknessGroup').hidden = src !== 'drawing';
   if (src === 'custom') initGalleryPicker();
   scheduleRender();
 }
@@ -765,8 +813,17 @@ function getLabelHeight() {
   return parseInt(document.querySelector('input[name="labelHeight"]:checked')?.value || '12', 10);
 }
 
+function getLabelLength() {
+  const v = parseFloat(document.getElementById('labelLengthInput')?.value);
+  return Number.isFinite(v) && v > 0 ? v : LABEL_LENGTH_DEFAULT_MM;
+}
+
 function getStdPref() {
   return document.querySelector('input[name="stdPref"]:checked')?.value || 'auto';
+}
+
+function getLineThickness() {
+  return parseFloat(document.querySelector('input[name="lineThickness"]:checked')?.value) || 1;
 }
 
 function getPrintScale() {
