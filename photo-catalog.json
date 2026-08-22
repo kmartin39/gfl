@@ -1,0 +1,44 @@
+[
+  {
+    "id": "carriage-bolt",
+    "file": "carriage-bolt.png",
+    "name": "Carriage Bolt",
+    "designation": "ISO 8677",
+    "addedAt": "2026-08-22T15:08:24Z"
+  },
+  {
+    "id": "thumb-screw",
+    "file": "thumb-screw.png",
+    "name": "Thumb Screw",
+    "designation": "",
+    "addedAt": "2026-08-22T15:27:27Z"
+  },
+  {
+    "id": "carriage-bolt-2",
+    "file": "carriage-bolt-2.png",
+    "name": "Carriage Bolt",
+    "designation": "ISO 8677",
+    "addedAt": "2026-08-22T15:27:47Z"
+  },
+  {
+    "id": "flat-washer",
+    "file": "flat-washer.png",
+    "name": "Flat Washer",
+    "designation": "",
+    "addedAt": "2026-08-22T15:34:20Z"
+  },
+  {
+    "id": "allen-bold-partial-thread",
+    "file": "allen-bold-partial-thread.png",
+    "name": "Allen Bold Partial thread",
+    "designation": "",
+    "addedAt": "2026-08-22T15:50:32Z"
+  },
+  {
+    "id": "allen-bolt-partial-thread",
+    "file": "allen-bolt-partial-thread.png",
+    "name": "Allen Bolt Partial Thread",
+    "designation": "",
+    "addedAt": "2026-08-22T15:51:47Z"
+  }
+]

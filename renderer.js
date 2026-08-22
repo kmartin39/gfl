@@ -73,6 +73,37 @@ async function renderLabel(canvas, { widthMm, heightMm, scale, content }) {
       ctx.scale((w * scale) / (content.iconVbw ?? 24), (h * scale) / (content.iconVbh ?? 24));
       ctx.fill(new Path2D(content.iconPath));
       ctx.restore();
+    } else if (content.photoUrl) {
+      // Raster photo icon (PNG/JPG) — fit within the box by aspect ratio,
+      // same as every other icon type. Since the box height derives from
+      // the tape height, this is exactly the "resize to fit tape" behavior:
+      // no separate resize step needed, just the generic aspect-fit here.
+      // Rotation/mirror are applied as a transform around the box's centre:
+      // the fit calc uses the *visual* (post-rotation) dimensions, but the
+      // actual drawImage call uses the image's original dimensions in the
+      // (still-unrotated) local coordinate space -- the ctx.rotate/scale
+      // applied beforehand makes that rectangle appear correctly rotated.
+      try {
+        const img = await loadImage(assetUrl(content.photoUrl));
+        const { x, y, w, h } = layout.image;
+        const rotation = content.photoRotation || 0;
+        const swapped = rotation === 90 || rotation === 270;
+        const visW = swapped ? img.naturalHeight : img.naturalWidth;
+        const visH = swapped ? img.naturalWidth : img.naturalHeight;
+        const fitS = Math.min((w * scale) / visW, (h * scale) / visH);
+        const localDw = img.naturalWidth * fitS;
+        const localDh = img.naturalHeight * fitS;
+        const cx = x * scale + (w * scale) / 2;
+        const cy = y * scale + (h * scale) / 2;
+        ctx.save();
+        ctx.translate(cx, cy);
+        if (rotation) ctx.rotate(rotation * Math.PI / 180);
+        if (content.photoFlipH || content.photoFlipV) {
+          ctx.scale(content.photoFlipH ? -1 : 1, content.photoFlipV ? -1 : 1);
+        }
+        ctx.drawImage(img, -localDw / 2, -localDh / 2, localDw, localDh);
+        ctx.restore();
+      } catch { /* image failed to load, skip */ }
     } else {
       const urls = resolveViewUrls(content);
       const { x, y, w, h } = layout.image;
@@ -157,7 +188,8 @@ function resolveViewUrls(content) {
 async function computeLayout(ctx, content, pw, ph, scale) {
   const hasImage  = content.imageSource === 'drawing' && resolveViewUrls(content).length > 0;
   const hasIcon   = (content.imageSource === 'mdi' || content.imageSource === 'custom') && !!content.iconPath;
-  const hasVisual = hasImage || hasIcon;
+  const hasPhoto  = content.imageSource === 'photo' && !!content.photoUrl;
+  const hasVisual = hasImage || hasIcon || hasPhoto;
   const hasQR = content.showQRCode && content.qrCodeUrl;
   const hasPrimary = !!content.primaryText;
   const hasSecondary = !!content.secondaryText;
@@ -183,6 +215,10 @@ async function computeLayout(ctx, content, pw, ph, scale) {
     let ar;
     if (hasIcon) {
       ar = (content.iconVbw ?? 24) / (content.iconVbh ?? 24);
+    } else if (hasPhoto) {
+      ar = await getImageAspectRatio(assetUrl(content.photoUrl));
+      // A 90/270 rotation swaps visual width and height for fitting purposes.
+      if (content.photoRotation === 90 || content.photoRotation === 270) ar = 1 / ar;
     } else {
       // Combined width-to-height of all selected views placed side by side,
       // so the image box is wide enough to hold them without overlap.

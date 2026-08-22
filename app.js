@@ -28,6 +28,13 @@ let specMode = 'standard';        // 'standard' | 'freeform'
 let selectedViews = [];           // ordered selected view names for label render
 let viewChipOrder = [];           // ordered list of all available view names
 let printQueue = [];              // accumulated labels for multi-print
+let photoCatalog = null;          // lazy-loaded photo-icon catalog
+let selectedPhotoIcon = null;     // { id, file, name, designation, path }
+let pendingUploadBlob = null;     // Blob selected via Browse/Paste, awaiting submit
+let uploadMode = 'browse';        // 'browse' | 'paste' | 'url'
+let photoRotation = 0;            // 0 | 90 | 180 | 270 — degrees, clockwise
+let photoFlipH = false;           // mirror horizontally
+let photoFlipV = false;           // mirror vertically
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 
@@ -111,6 +118,13 @@ function bindEvents() {
   // Custom icon picker
   document.getElementById('customIconSearch').addEventListener('input', onCustomIconSearch);
   document.getElementById('clearCustomIconBtn').addEventListener('click', clearCustomIcon);
+
+  // Photo icon picker
+  document.getElementById('photoSearch').addEventListener('input', onPhotoSearch);
+  document.getElementById('clearPhotoIconBtn').addEventListener('click', clearPhotoIcon);
+  initPhotoUploadModal();
+  initPhotoTransformControls();
+  initCopyAgentCommandButton();
 
   // Standard star
   document.getElementById('starStandardBtn').addEventListener('click', toggleFavoriteStandard);
@@ -797,8 +811,10 @@ function onImageSourceChange() {
   const src = getImageSource();
   document.getElementById('mdiPickerGroup').hidden    = src !== 'mdi';
   document.getElementById('customPickerGroup').hidden = src !== 'custom';
+  document.getElementById('photoPickerGroup').hidden  = src !== 'photo';
   document.getElementById('lineThicknessGroup').hidden = src !== 'drawing';
   if (src === 'custom') initGalleryPicker();
+  if (src === 'photo') initPhotoPicker();
   scheduleRender();
 }
 

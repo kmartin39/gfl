@@ -60,6 +60,7 @@
         <input type="radio" name="imageSource"  value="drawing" checked />
         <input type="radio" name="imageSource"  value="mdi" />
         <input type="radio" name="imageSource"  value="custom" />
+        <input type="radio" name="imageSource"  value="photo" />
         <input type="radio" name="imageSource"  value="none" />
         <input type="radio" name="printPath"    value="agent" />
         <input type="radio" name="printPath"    value="serial" checked />
@@ -225,6 +226,7 @@
             <button class="seg-btn seg-sm seg-active" data-value="drawing" role="radio" aria-checked="true">Drawing</button>
             <button class="seg-btn seg-sm"             data-value="mdi"     role="radio" aria-checked="false">MDI</button>
             <button class="seg-btn seg-sm"             data-value="custom"  role="radio" aria-checked="false">Gallery</button>
+            <button class="seg-btn seg-sm"             data-value="photo"   role="radio" aria-checked="false">Photo</button>
             <button class="seg-btn seg-sm"             data-value="none"    role="radio" aria-checked="false">None</button>
           </div>
           <label class="upload-svg-label">
@@ -292,6 +294,38 @@
               <span id="selectedCustomIconName" class="standard-name"></span>
             </div>
             <button type="button" id="clearCustomIconBtn" class="clear-btn" title="Clear">×</button>
+          </div>
+        </div>
+
+        <!-- Photo icon picker (PNG/JPG, uploaded via the local image agent) -->
+        <div id="photoPickerGroup" hidden>
+          <div class="search-container">
+            <input type="text" id="photoSearch" class="form-input" placeholder="Search photos (name or ISO/DIN)…" autocomplete="off" />
+          </div>
+          <div class="community-icons-list" id="photoIconsList"></div>
+          <div class="icon-ctrl-row">
+            <button type="button" id="photoUploadBtn" class="link-btn">↑ Upload photo…</button>
+            <span class="preview-footer-spacer"></span>
+            <span class="status-dot" id="photoAgentDot" title="Image agent status"></span>
+            <span id="photoAgentLabel" class="out-status">Checking image agent…</span>
+          </div>
+          <div id="selectedPhotoIconDisplay" class="selected-standard" hidden>
+            <img id="photoIconPreview" alt="" class="standard-thumb" />
+            <div class="standard-info">
+              <span id="selectedPhotoIconName" class="standard-name"></span>
+              <span id="selectedPhotoIconDesig" class="standard-desc"></span>
+            </div>
+            <button type="button" id="clearPhotoIconBtn" class="clear-btn" title="Clear">×</button>
+          </div>
+          <div class="icon-ctrl-row" id="photoTransformRow" hidden>
+            <span class="mini-label">Rotate</span>
+            <button type="button" class="ht-btn" id="photoRotateLeftBtn" title="Rotate left 90°">⟲</button>
+            <span id="photoRotationLabel" class="ht-btn" style="cursor:default">0°</span>
+            <button type="button" class="ht-btn" id="photoRotateRightBtn" title="Rotate right 90°">⟳</button>
+            <span class="preview-hdr-sep" aria-hidden="true"></span>
+            <span class="mini-label">Mirror</span>
+            <button type="button" class="ht-btn" id="photoFlipHBtn" title="Mirror horizontally">⇋</button>
+            <button type="button" class="ht-btn" id="photoFlipVBtn" title="Mirror vertically">⇕</button>
           </div>
         </div>
       </section>
@@ -479,6 +513,7 @@
 <script src="printer.js"></script>
 <script src="renderer.js"></script>
 <script src="catalog.js"></script>
+<script src="photos.js"></script>
 <script src="app.js"></script>
 
 <!-- Shortcuts Help Modal -->
@@ -512,6 +547,58 @@
       <span class="preview-footer-spacer"></span>
       <button id="tourPrevBtn" type="button" class="link-btn">Back</button>
       <button id="tourNextBtn" type="button" class="btn-primary">Next →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Photo upload modal -->
+<div id="photoUploadOverlay" class="shortcuts-overlay" hidden>
+  <div class="shortcuts-dialog photo-upload-dialog">
+    <div class="shortcuts-hdr">
+      <span class="shortcuts-title">Add Photo to Catalog</span>
+      <button id="photoUploadCloseBtn" class="shortcuts-close" title="Close">×</button>
+    </div>
+    <div class="photo-upload-body">
+      <div class="seg-ctrl seg-full" id="uploadModeSeg" role="radiogroup" aria-label="Upload method">
+        <button class="seg-btn seg-active" data-value="browse" role="radio" aria-checked="true">Browse File</button>
+        <button class="seg-btn"             data-value="paste"  role="radio" aria-checked="false">Paste</button>
+        <button class="seg-btn"             data-value="url"    role="radio" aria-checked="false">From URL</button>
+      </div>
+
+      <div id="uploadBrowseGroup" class="form-group">
+        <input type="file" id="photoFileInput" class="form-input" accept="image/png,image/jpeg" />
+      </div>
+      <div id="uploadPasteGroup" class="form-group" hidden>
+        <div id="pasteTarget" class="paste-target" tabindex="0">Click here, then press Ctrl+V to paste an image</div>
+      </div>
+      <div id="uploadUrlGroup" class="form-group" hidden>
+        <input type="url" id="photoUrlInput" class="form-input" placeholder="https://…" />
+      </div>
+
+      <div id="uploadPreviewBox" class="upload-preview-box" hidden>
+        <img id="uploadPreviewImg" alt="Preview" />
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="photoNameInput">Name</label>
+        <input type="text" id="photoNameInput" class="form-input" placeholder="e.g. Stainless Hex Nut" maxlength="60" />
+      </div>
+      <div class="form-group">
+        <label class="field-label" for="photoDesignationInput">ISO / DIN designation (optional)</label>
+        <input type="text" id="photoDesignationInput" class="form-input" placeholder="e.g. ISO 4032 / DIN 934" maxlength="60" />
+      </div>
+
+      <p id="photoUploadError" class="upload-error" hidden></p>
+
+      <div class="icon-ctrl-row">
+        <span class="status-dot" id="uploadAgentDot"></span>
+        <span id="uploadAgentLabel" class="out-status">Checking image agent…</span>
+        <button type="button" id="copyAgentCommandBtn" class="link-btn" hidden title="Browsers can't launch local programs directly -- copy the command and run it in a terminal, or double-click run-local.bat in the project folder">Copy start command</button>
+        <span class="preview-footer-spacer"></span>
+        <button type="button" id="photoUploadCancelBtn" class="link-btn">Cancel</button>
+        <button type="button" id="photoUploadSubmitBtn" class="btn-primary" style="width:auto">Save to Catalog</button>
+      </div>
     </div>
   </div>
 </div>
