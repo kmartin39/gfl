@@ -385,6 +385,13 @@ select.form-input {
 .search-item.selected { background: #dbeafe; }
 .search-item.selected .search-item-code { color: var(--accent); }
 
+.design-item {
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .search-item-code { font-weight: 700; font-size: 0.78rem; color: var(--accent); }
 .search-item-desc { font-size: 0.72rem; color: var(--ink-2); }
 .search-no-results { padding: 10px; color: var(--ink-3); font-size: 0.82rem; text-align: center; }
@@ -924,6 +931,7 @@ select.form-input {
 }
 .bq-table tbody tr:hover { background: var(--rule-soft); }
 .bq-table tbody tr.bq-row-active { background: rgba(37,99,235,0.06); }
+.bq-table tbody tr.bq-row-clickable { cursor: pointer; }
 .bq-table td { padding: 6px 10px; color: var(--ink); }
 .bq-table td:first-child { font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-3); }
 .bq-table td.bq-del { text-align: center; color: var(--ink-3); cursor: pointer; padding: 6px 8px; }

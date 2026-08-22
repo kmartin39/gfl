@@ -125,6 +125,8 @@ function bindEvents() {
   initPhotoUploadModal();
   initPhotoTransformControls();
   initCopyAgentCommandButton();
+  initDesigns();
+  initQueueExport();
 
   // Standard star
   document.getElementById('starStandardBtn').addEventListener('click', toggleFavoriteStandard);
@@ -483,12 +485,17 @@ async function addToQueue() {
         batchIndex = i;
         const canvas = await getPrintCanvas();
         const content = buildLabelContent();
+        // Single length (not the whole batch list), so clicking this queue
+        // row later reloads just this one label, not the entire batch.
+        const itemState = captureDesignState();
+        itemState.lengthInput = String(lengths[i]);
         printQueue.push({
           canvas,
           name: content.primaryText || '(untitled)',
           note: content.secondaryText || '',
           heightMm: getLabelHeight(),
           widthMm: getLabelLength(),
+          state: itemState,
         });
       }
       batchIndex = savedBatchIndex;
@@ -501,6 +508,7 @@ async function addToQueue() {
         note: content.secondaryText || '',
         heightMm: getLabelHeight(),
         widthMm: getLabelLength(),
+        state: captureDesignState(),
       });
     }
     renderPrintQueue();
@@ -547,6 +555,14 @@ function renderPrintQueue() {
       e.stopPropagation();
       removeFromQueue(i);
     });
+    if (item.state) {
+      tr.classList.add('bq-row-clickable');
+      tr.title = 'Click to reload this label\'s settings';
+      tr.addEventListener('click', e => {
+        if (e.target.closest('.bq-del')) return;
+        applyDesignState(item.state);
+      });
+    }
     tbody.appendChild(tr);
   });
 }

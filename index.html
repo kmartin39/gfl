@@ -343,6 +343,16 @@
         </div>
       </section>
 
+      <!-- Saved Designs (full label configuration, not just an icon/standard) -->
+      <section class="cfg-section" id="designsSection">
+        <div class="section-hdr">Saved Designs</div>
+        <div class="icon-ctrl-row">
+          <button type="button" id="saveDesignBtn" class="link-btn">+ Save Current Design</button>
+        </div>
+        <div id="designsList" class="community-icons-list"></div>
+        <p id="designsEmpty" class="hint-text">No saved designs yet.</p>
+      </section>
+
       <!-- Favorites management -->
       <section class="cfg-section" id="favMgmtSection">
         <div class="section-hdr">Favorites</div>
@@ -453,6 +463,11 @@
             <tbody id="printQueueBody"></tbody>
           </table>
         </div>
+        <div class="icon-ctrl-row">
+          <span class="mini-label">Export queue as PNG</span>
+          <button type="button" id="exportQueueIndividualBtn" class="link-btn">Individual files</button>
+          <button type="button" id="exportQueueChainBtn" class="link-btn">Single chain image</button>
+        </div>
       </div>
 
       <!-- Output Card -->
@@ -514,6 +529,7 @@
 <script src="renderer.js"></script>
 <script src="catalog.js"></script>
 <script src="photos.js"></script>
+<script src="designs.js"></script>
 <script src="app.js"></script>
 
 <!-- Shortcuts Help Modal -->
