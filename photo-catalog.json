@@ -40,5 +40,1267 @@
     "name": "Allen Bolt Partial Thread",
     "designation": "",
     "addedAt": "2026-08-22T15:51:47Z"
+  },
+  {
+    "id": "hex-head-bolt",
+    "file": "hex-head-bolt.png",
+    "name": "Hex Head Bolt",
+    "designation": "",
+    "addedAt": "2026-08-23T17:15:54Z"
+  },
+  {
+    "id": "hex-head-bolt-2",
+    "file": "hex-head-bolt-2.png",
+    "name": "Hex Head Bolt",
+    "designation": "",
+    "addedAt": "2026-08-23T17:16:49Z"
+  },
+  {
+    "id": "iso14580",
+    "file": "din-catalog/din_7984.png",
+    "name": "Hexalobular socket cheese head screws",
+    "designation": "ISO 14580",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din93",
+    "file": "din-catalog/din_93.png",
+    "name": "Tab Washers with long tab",
+    "designation": "DIN 93",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din95",
+    "file": "din-catalog/din_95.png",
+    "name": "Slotted raised countersunk (oval) head wood screws",
+    "designation": "DIN 95",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din96",
+    "file": "din-catalog/din_96.png",
+    "name": "Slotted round head wood screws",
+    "designation": "DIN 96",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din97",
+    "file": "din-catalog/din_97.png",
+    "name": "Slotted countersunk (flat) head wood screws",
+    "designation": "DIN 97",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din127",
+    "file": "din-catalog/din_127.png",
+    "name": "Spring Lock Washers",
+    "designation": "DIN 127",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din128",
+    "file": "din-catalog/din_128.png",
+    "name": "Curved spring lock washers",
+    "designation": "DIN 128",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din186",
+    "file": "din-catalog/din_186.png",
+    "name": "T-head bolts with square neck",
+    "designation": "DIN 186",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din261",
+    "file": "din-catalog/din_261.png",
+    "name": "T-head bolts",
+    "designation": "DIN 261",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din315",
+    "file": "din-catalog/din_315.png",
+    "name": "Fasteners - Wing nuts - Rounded wings",
+    "designation": "DIN 315",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din316",
+    "file": "din-catalog/din_316.png",
+    "name": "Fasteners - Wing screws - Rounded wings",
+    "designation": "DIN 316",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din404",
+    "file": "din-catalog/din_404.png",
+    "name": "Slotted capstan screws",
+    "designation": "DIN 404",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din431",
+    "file": "din-catalog/din_431.png",
+    "name": "Pipe nuts with thread according to DIN EN ISO 228-1",
+    "designation": "DIN 431",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din432",
+    "file": "din-catalog/din_432.png",
+    "name": "Locking tab washers",
+    "designation": "DIN 432",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din434",
+    "file": "din-catalog/din_434.png",
+    "name": "Square taper washers for U-sections",
+    "designation": "DIN 434",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din435",
+    "file": "din-catalog/din_435.png",
+    "name": "Square taper washers for I-sections",
+    "designation": "DIN 435",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din436",
+    "file": "din-catalog/din_436.png",
+    "name": "Square washers, especially for wood constructions",
+    "designation": "DIN 436",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din444",
+    "file": "din-catalog/din_444.png",
+    "name": "Fasteners - Eye bolts",
+    "designation": "DIN 444",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din462",
+    "file": "din-catalog/din_462.png",
+    "name": "Machine tools - Internal tab washers for slotted round nuts in conformity with DIN 1804",
+    "designation": "DIN 462",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din463",
+    "file": "din-catalog/din_463.png",
+    "name": "Washers with 2 taps",
+    "designation": "DIN 463",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din464",
+    "file": "din-catalog/din_464.png",
+    "name": "Knurled thumb screws, high type",
+    "designation": "DIN 464",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din466",
+    "file": "din-catalog/din_466.png",
+    "name": "Knurled nuts - High type",
+    "designation": "DIN 466",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din467",
+    "file": "din-catalog/din_467.png",
+    "name": "Knurled nuts - Low type",
+    "designation": "DIN 467",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din471",
+    "file": "din-catalog/din_471.png",
+    "name": "Retaining rings for shafts - Normal type and heavy type",
+    "designation": "DIN 471",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din472",
+    "file": "din-catalog/din_472.png",
+    "name": "Retaining rings for bores - Normal type and heavy type",
+    "designation": "DIN 472",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din478",
+    "file": "din-catalog/din_478.png",
+    "name": "Square head bolts with collar",
+    "designation": "DIN 478",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din508",
+    "file": "din-catalog/din_508.png",
+    "name": "Nuts for T-slots",
+    "designation": "DIN 508",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din546",
+    "file": "din-catalog/din_546.png",
+    "name": "Slotted round nuts",
+    "designation": "DIN 546",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din557",
+    "file": "din-catalog/din_557.png",
+    "name": "Fasteners - Square nuts - Product grade C",
+    "designation": "DIN 557",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din562",
+    "file": "din-catalog/din_557.png",
+    "name": "Square thin nuts - Product grade B",
+    "designation": "DIN 562",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din571",
+    "file": "din-catalog/din_571.png",
+    "name": "Hexagon head wood screws",
+    "designation": "DIN 571",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din604",
+    "file": "din-catalog/din_604.png",
+    "name": "Flat countersunk head nib bolts",
+    "designation": "DIN 604",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din605",
+    "file": "din-catalog/din_605.png",
+    "name": "Flat countersunk head square neck bolts with long square",
+    "designation": "DIN 605",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din607",
+    "file": "din-catalog/din_607.png",
+    "name": "Cup head nib bolts",
+    "designation": "DIN 607",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din609",
+    "file": "din-catalog/din_609.png",
+    "name": "Hexagon fits bolts with long thread",
+    "designation": "DIN 609",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din610",
+    "file": "din-catalog/din_610.png",
+    "name": "Hexagon fit bolts with short reduced threaded portion; metric thread",
+    "designation": "DIN 610",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din653",
+    "file": "din-catalog/din_653.png",
+    "name": "Knurled thumb screws, low type",
+    "designation": "DIN 653",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din787",
+    "file": "din-catalog/din_787.png",
+    "name": "Bolts and screws for T-slots",
+    "designation": "DIN 787",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din917",
+    "file": "din-catalog/din_917.png",
+    "name": "Hexagon cap nuts, low type",
+    "designation": "DIN 917",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din928",
+    "file": "din-catalog/din_928.png",
+    "name": "Square weld nuts",
+    "designation": "DIN 928",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din935",
+    "file": "din-catalog/din_935.png",
+    "name": "Castle nuts - metric thread, finish m, mg and g",
+    "designation": "DIN 935",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din936",
+    "file": "din-catalog/din_439.png",
+    "name": "Hexagon lock nuts, metric thread",
+    "designation": "DIN 936",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din937",
+    "file": "din-catalog/din_937.png",
+    "name": "Low castle nuts; metric thread",
+    "designation": "DIN 937",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din979",
+    "file": "din-catalog/din_979.png",
+    "name": "Hexagon thin slotted and castle nuts - Metric coarse and fine pitch thread, product grades A and B",
+    "designation": "DIN 979",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din981",
+    "file": "din-catalog/din_981.png",
+    "name": "Rolling bearings - Locknuts",
+    "designation": "DIN 981",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din986",
+    "file": "din-catalog/din_986.png",
+    "name": "Prevailing torque type hexagon domed cap nuts with nonmetallic insert",
+    "designation": "DIN 986",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din988",
+    "file": "din-catalog/din_988.png",
+    "name": "Shim rings and supporting rings",
+    "designation": "DIN 988",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso1207",
+    "file": "din-catalog/din_84.png",
+    "name": "Slotted cheese head screws - Product grade A",
+    "designation": "ISO 1207 / DIN 84",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso1479",
+    "file": "din-catalog/din_7976.png",
+    "name": "Hexagon head tapping screws",
+    "designation": "ISO 1479 / DIN 7976",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din1479",
+    "file": "din-catalog/din_1479.png",
+    "name": "Hexagon turnbuckles",
+    "designation": "DIN 1479",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso1580",
+    "file": "din-catalog/din_85.png",
+    "name": "Slotted pan head screws - Product grade A",
+    "designation": "ISO 1580 / DIN 85",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din1587",
+    "file": "din-catalog/din_1587.png",
+    "name": "Hexagon cap nuts, high type",
+    "designation": "DIN 1587",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din1816",
+    "file": "din-catalog/din_1816.png",
+    "name": "Round Nut with Set Pin Holes Inside; ISO Metric Fine Thread",
+    "designation": "DIN 1816",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso2009",
+    "file": "din-catalog/din_963.png",
+    "name": "Slotted countersunk flat head screws - Product grade A",
+    "designation": "ISO 2009 / DIN 963",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso2010",
+    "file": "din-catalog/din_964.png",
+    "name": "Slotted raised countersunk head screws - Product grade A",
+    "designation": "ISO 2010 / DIN 964",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din2093",
+    "file": "din-catalog/din_2093.png",
+    "name": "Disc springs; dimensions and quality specifications",
+    "designation": "DIN 2093",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso2338",
+    "file": "din-catalog/din_7.png",
+    "name": "Parallel pins, of unhardened steel and austenitic stainless steel",
+    "designation": "ISO 2338 / DIN 7",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso2339",
+    "file": "din-catalog/din_1.png",
+    "name": "Taper pins, unhardened",
+    "designation": "ISO 2339 / DIN 1",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso2341",
+    "file": "din-catalog/din_1444.png",
+    "name": "Clevis pins with head",
+    "designation": "ISO 2341 / DIN 1443",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din2510",
+    "file": "din-catalog/din_2510.png",
+    "name": "Bolted Connections with Reduced Shank - Extension Sleeves",
+    "designation": "DIN 2510",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4014",
+    "file": "din-catalog/iso_4014.png",
+    "name": "Fasteners - Hexagon head bolts - Product grades A and B",
+    "designation": "ISO 4014 / DIN 931",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4017",
+    "file": "din-catalog/iso_4014.png",
+    "name": "Fasteners - Hexagon head screws - Product grades A and B",
+    "designation": "ISO 4017 / DIN 933",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4032",
+    "file": "din-catalog/iso_4032.png",
+    "name": "Fasteners - Hexagon regular nuts (style 1)",
+    "designation": "ISO 4032 / DIN 934",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4033",
+    "file": "din-catalog/din_982.png",
+    "name": "Fasteners - Hexagon high nuts (style 2) (ISO 4033:2023); German version EN ISO 4033:2023",
+    "designation": "ISO 4033 / DIN 982",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4035",
+    "file": "din-catalog/din_439.png",
+    "name": "Fasteners - Hexagon thin nuts (style 0)",
+    "designation": "ISO 4035 / DIN 439",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4162",
+    "file": "din-catalog/din_6921.png",
+    "name": "ISO 4162",
+    "designation": "ISO 4162 / DIN 6921",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4762",
+    "file": "din-catalog/din_912.png",
+    "name": "Hexagon socket head cap screws",
+    "designation": "ISO 4762 / DIN 912",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso4766",
+    "file": "din-catalog/din_1481.png",
+    "name": "Fasteners - Slotted set screws with flat point (ISO 4766:2024); German version EN ISO 4766:2024",
+    "designation": "ISO 4766 / DIN 1481",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6330",
+    "file": "din-catalog/din_6330.png",
+    "name": "Hexagon nuts with a height of 1,5 d",
+    "designation": "DIN 6330",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6331",
+    "file": "din-catalog/din_6331.png",
+    "name": "Hexagon collar nuts with a height of 1,5 d",
+    "designation": "DIN 6331",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6334",
+    "file": "din-catalog/din_6334.png",
+    "name": "Hexagon slotted nuts - Part 3: Metric coarse pitch thread, product grade C",
+    "designation": "DIN 6334",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6340",
+    "file": "din-catalog/din_6340.png",
+    "name": "Washers for clamping devices",
+    "designation": "DIN 6340",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6796",
+    "file": "din-catalog/din_6796.png",
+    "name": "Conical spring washers for bolted connections",
+    "designation": "DIN 6796",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6914",
+    "file": "din-catalog/din_6914.png",
+    "name": "Hexagon bolts with large widths across flats for steel structures (joints with high-tensile, prestressed bolts)",
+    "designation": "DIN 6914",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6915",
+    "file": "din-catalog/din_6915.png",
+    "name": "Sechskantmuttern mit gro\u00dfen Schl\u00fcsselweiten, f\u00fcr HV-Verbindungen in Stahlkonstruktionen",
+    "designation": "DIN 6915",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6916",
+    "file": "din-catalog/din_6916.png",
+    "name": "Washers for steel structures (joint with high-tensile, prestressed bolts)",
+    "designation": "DIN 6916",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6923",
+    "file": "din-catalog/din_6923.png",
+    "name": "Hexagon nuts with flange",
+    "designation": "DIN 6923",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6925",
+    "file": "din-catalog/din_6925.png",
+    "name": "Prevailing torque type all-metall hexagon nuts",
+    "designation": "DIN 6925",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6926",
+    "file": "din-catalog/din_6926.png",
+    "name": "Prevailing torque type hexagon nuts with flange and with non-metallic insert",
+    "designation": "DIN 6926",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din6927",
+    "file": "din-catalog/din_6927.png",
+    "name": "Prevailing torque type all-metal nuts with flange",
+    "designation": "DIN 6927",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7040",
+    "file": "din-catalog/din_982.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - Regular nuts (with non-metallic insert)",
+    "designation": "ISO 7040 / DIN 985",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7041",
+    "file": "din-catalog/din_982.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - High nuts (with non-metallic insert) (ISO 7041:2025); German version EN ISO 7041:2025",
+    "designation": "ISO 7041 / DIN 982",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7042",
+    "file": "din-catalog/din_6925.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - High nuts (all metal)",
+    "designation": "ISO 7042 / DIN 980 / DIN 982",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7045",
+    "file": "din-catalog/din_7985.png",
+    "name": "Pan head screws with type H or type Z cross recess - Product grade A",
+    "designation": "ISO 7045 / DIN 7985",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7046",
+    "file": "din-catalog/din_965.png",
+    "name": "Countersunk flat head screws (common head style) with type H or type Z cross recess - Product grade A - Part 1: Steel screws of property class 4.8 (ISO 7046-1:2011); German version EN ISO 7046-1:2011",
+    "designation": "ISO 7046 / DIN 965",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7047",
+    "file": "din-catalog/din_966.png",
+    "name": "Raised countersunk head screws (common head style) with type H or type Z cross recess - Product grade A",
+    "designation": "ISO 7047 / DIN 966",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7049",
+    "file": "din-catalog/din_7981.png",
+    "name": "Cross-recessed pan head tapping screws",
+    "designation": "ISO 7049 / DIN 7981",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7050",
+    "file": "din-catalog/din_7982.png",
+    "name": "Cross-recessed countersunk (flat) head tapping screws",
+    "designation": "ISO 7050 / DIN 7982",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7051",
+    "file": "din-catalog/din_7983.png",
+    "name": "Cross-recessed raised countersunk (oval) head tapping screws",
+    "designation": "ISO 7051 / DIN 7983",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7053",
+    "file": "din-catalog/iso_7053.png",
+    "name": "Fasteners - Hexagon washer head tapping screws",
+    "designation": "ISO 7053 / DIN 7967",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7089",
+    "file": "din-catalog/din_125.png",
+    "name": "Plain washers - Normal series - Product grade A",
+    "designation": "ISO 7089 / DIN 125",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7090",
+    "file": "din-catalog/din_125.png",
+    "name": "Plain washers, chamfered - Normal series, Product grade A (ISO 7090:2000); German version EN ISO 7090:2000",
+    "designation": "ISO 7090 / DIN 125",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7091",
+    "file": "din-catalog/din_126.png",
+    "name": "Plain washers - Normal series - Product grade C",
+    "designation": "ISO 7091 / DIN 126",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7092",
+    "file": "din-catalog/din_433.png",
+    "name": "Plain washers - Small series - Product grade A",
+    "designation": "ISO 7092 / DIN 433",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7093",
+    "file": "din-catalog/din_9021.png",
+    "name": "Plain washers - Large series - Part 2: Product grade C (ISO 7093-2:2000); German version EN ISO 7093-2:2000",
+    "designation": "ISO 7093 / DIN 9021",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7094",
+    "file": "din-catalog/din_440.png",
+    "name": "Plain washers - Extra large series - Product grade C",
+    "designation": "ISO 7094 / DIN 440",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7344",
+    "file": "din-catalog/din_7344.png",
+    "name": "Spiral Pins; Heavy Duty Type",
+    "designation": "DIN 7344",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7349",
+    "file": "din-catalog/din_7349.png",
+    "name": "Plain washers for bolts with heavy clamping sleeves",
+    "designation": "DIN 7349",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7379",
+    "file": "din-catalog/iso_7379.png",
+    "name": "Hexagon socket head shoulder screws",
+    "designation": "ISO 7379 / DIN 6912",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7380",
+    "file": "din-catalog/iso_7380.png",
+    "name": "Fasteners - Button head screws with reduced loadability - Part 1: Hexagon socket button head screws (ISO 7380-1:2022); German version EN ISO 7380-1:2023",
+    "designation": "ISO 7380 / DIN 9427",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7603",
+    "file": "din-catalog/din_7603.png",
+    "name": "Sealing rings",
+    "designation": "DIN 7603",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7719",
+    "file": "din-catalog/din_980.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - Regular nuts (all metal) (ISO 7719:2025); German version EN ISO 7719:2025",
+    "designation": "ISO 7719 / DIN 980",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso7720",
+    "file": "din-catalog/din_982.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - High nuts (all metal) with slot(s) (ISO 7720:2025); German version EN ISO 7720:2025",
+    "designation": "ISO 7720 / DIN 982",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7965",
+    "file": "din-catalog/din_7965.png",
+    "name": "Screwed inserts (Screw plugs)",
+    "designation": "DIN 7965",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7968",
+    "file": "din-catalog/din_7968.png",
+    "name": "Hexagon fit bolts with hexagon nut for steel structures",
+    "designation": "DIN 7968",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7969",
+    "file": "din-catalog/din_7969.png",
+    "name": "Slotted countersunk head bolts with hexagon nut for steel structures",
+    "designation": "DIN 7969",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7980",
+    "file": "din-catalog/din_7980.png",
+    "name": "Spring lock washers with spuare ends for cheese head screws",
+    "designation": "DIN 7980",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7984",
+    "file": "din-catalog/din_7984.png",
+    "name": "Hexagon socket head cap screws with low head with reduced loadability",
+    "designation": "DIN 7984",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7990",
+    "file": "din-catalog/din_7990.png",
+    "name": "Hexagon head bolts with hexagon nut for steel structures",
+    "designation": "DIN 7990",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7991",
+    "file": "din-catalog/din_7991.png",
+    "name": "Hexagon socket countersunk head screws",
+    "designation": "DIN 7991",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7997",
+    "file": "din-catalog/din_7997.png",
+    "name": "Cross recessed countersunk head wood screws",
+    "designation": "DIN 7997",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din7999",
+    "file": "din-catalog/din_7999.png",
+    "name": "High strength hexagon fit bolts with large widths across flats for structural steel bolting",
+    "designation": "DIN 7999",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8673",
+    "file": "din-catalog/din_934.png",
+    "name": "Fasteners - Hexagon regular nuts (style 1), with fine pitch thread (ISO 8673:2023); German version EN ISO 8673:2023",
+    "designation": "ISO 8673 / DIN 934",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8674",
+    "file": "din-catalog/din_982.png",
+    "name": "Fasteners - Hexagon high nuts (style 2), with fine pitch thread (ISO 8674:2023); German version EN ISO 8674:2023",
+    "designation": "ISO 8674 / DIN 982",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8675",
+    "file": "din-catalog/din_439.png",
+    "name": "Fasteners - Hexagon thin nuts (style 0), with fine pitch thread (ISO 8675:2023); German version EN ISO 8675:2023",
+    "designation": "ISO 8675 / DIN 439",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8676",
+    "file": "din-catalog/din_961.png",
+    "name": "Fasteners - Hexagon head screws, with fine pitch thread - Product grades A and B",
+    "designation": "ISO 8676 / DIN 961",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8678",
+    "file": "din-catalog/din_603.png",
+    "name": "ISO 8678",
+    "designation": "ISO 8678 / DIN 603",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8734",
+    "file": "din-catalog/din_6325.png",
+    "name": "Parallel pins, of hardened steel and martensitic stainless steel (Dowel pins)",
+    "designation": "ISO 8734 / DIN 6325 / DIN 7",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8735",
+    "file": "din-catalog/din_7979d.png",
+    "name": "Parallel pins with internal thread, of hardened steel and martensitic stainless steel",
+    "designation": "ISO 8735 / DIN 7978",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8736",
+    "file": "din-catalog/din_7978.png",
+    "name": "Taper pins with internal thread, unhardened",
+    "designation": "ISO 8736 / DIN 7977",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8737",
+    "file": "din-catalog/din_258.png",
+    "name": "Taper pins with external thread, unhardened",
+    "designation": "ISO 8737 / DIN 7977",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8738",
+    "file": "din-catalog/din_1440.png",
+    "name": "Plain washers for clevis pins; Product grade A",
+    "designation": "ISO 8738 / DIN 1440",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8740",
+    "file": "din-catalog/din_1473.png",
+    "name": "Fasteners - Parallel grooved pins, with chamfer point - Full-length diamond grooves",
+    "designation": "ISO 8740 / DIN 1473",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8741",
+    "file": "din-catalog/din_1474.png",
+    "name": "Fasteners - Reverse-taper grooved pins - Half-length progressive grooves",
+    "designation": "ISO 8741 / DIN 1474",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8744",
+    "file": "din-catalog/din_1471.png",
+    "name": "Fasteners - Taper grooved pins - Full-length progressive grooves",
+    "designation": "ISO 8744 / DIN 1471",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8745",
+    "file": "din-catalog/din_1472.png",
+    "name": "Fasteners - Taper grooved pins - Half-length progressive grooves",
+    "designation": "ISO 8745 / DIN 1472",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8746",
+    "file": "din-catalog/din_1476.png",
+    "name": "Fasteners - Grooved pins with round head - Full-length diamond grooves",
+    "designation": "ISO 8746 / DIN 1476",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8747",
+    "file": "din-catalog/din_1477.png",
+    "name": "Fasteners - Grooved pins with countersunk head - Full-length diamond grooves",
+    "designation": "ISO 8747 / DIN 1477",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8748",
+    "file": "din-catalog/din_7344.png",
+    "name": "Spring-type straight pins - Coiled, heavy duty",
+    "designation": "ISO 8748 / DIN 7344",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8750",
+    "file": "din-catalog/din_7343.png",
+    "name": "Spring-type straight pins - Coiled, standard duty",
+    "designation": "ISO 8750 / DIN 7343",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8751",
+    "file": "din-catalog/din_7343.png",
+    "name": "Spring-type straight pins - Coiled, light duty (ISO 8751:2007); German version EN ISO 8751:2007",
+    "designation": "ISO 8751 / DIN 7343",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8752",
+    "file": "din-catalog/din_1481.png",
+    "name": "Spring-type straight pins - Slotted, heavy duty",
+    "designation": "ISO 8752 / DIN 1481",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso8765",
+    "file": "din-catalog/din_960.png",
+    "name": "Fasteners - Hexagon head bolts, with fine pitch thread - Product grades A and B",
+    "designation": "ISO 8765 / DIN 960",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso10511",
+    "file": "din-catalog/din_985.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - Thin nuts (with non-metallic insert)",
+    "designation": "ISO 10511 / DIN 985",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso10512",
+    "file": "din-catalog/din_985.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - Regular nuts (with non-metallic insert), with fine pitch thread (ISO 10512:2025); German version EN ISO 10512:2025",
+    "designation": "ISO 10512 / DIN 985",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso10513",
+    "file": "din-catalog/din_980.png",
+    "name": "Fasteners - Prevailing torque hexagon nuts - High nuts (all metal), with fine pitch thread (ISO 10513:2025); German version EN ISO 10513:2025",
+    "designation": "ISO 10513 / DIN 980",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso10642",
+    "file": "din-catalog/din_7991.png",
+    "name": "Fasteners - Hexagon socket countersunk head screws with reduced loadability",
+    "designation": "ISO 10642 / DIN 7991",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso10644",
+    "file": "din-catalog/din_7981.png",
+    "name": "Screw and washer assemblies made of steel with plain washers - Washer hardness classes 200 HV and 300 HV (ISO 10644:2009); German version EN ISO 10644:2009",
+    "designation": "ISO 10644 / DIN 7981",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso12474",
+    "file": "din-catalog/din_912.png",
+    "name": "Hexagon socket head cap screws with metric fine pitch thread (ISO 12474:2010); German version EN ISO 12474:2010",
+    "designation": "ISO 12474 / DIN 912",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso13337",
+    "file": "din-catalog/din_7346.png",
+    "name": "Spring-type straight pins - Slotted, light duty",
+    "designation": "ISO 13337 / DIN 7346",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso14583",
+    "file": "din-catalog/din_7985.png",
+    "name": "Hexalobular socket pan head screws",
+    "designation": "ISO 14583 / DIN 7996",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso14587",
+    "file": "din-catalog/din_7982.png",
+    "name": "Hexalobular socket raised countersunk (oval) head tapping screws (ISO 14587:2011); German version EN ISO 14587:2011",
+    "designation": "ISO 14587 / DIN 7982",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso15071",
+    "file": "din-catalog/din_6921.png",
+    "name": "Metallic materials - Tube - Flanging test (ISO 8494:2013); German version EN ISO 8494:2013",
+    "designation": "ISO 15071 / DIN 6921",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso15072",
+    "file": "din-catalog/din_6921.png",
+    "name": "Metallic materials - Tube - Flanging test (ISO 8494:2013); German version EN ISO 8494:2013",
+    "designation": "ISO 15072 / DIN 6921",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din15237",
+    "file": "din-catalog/din_15237.png",
+    "name": "Continuous mechanical handling equipment; seating screws and cupped washers for the attachment of components to belts",
+    "designation": "DIN 15237",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso15480",
+    "file": "din-catalog/iso_15480.png",
+    "name": "Fasteners - Hexagon washer head drilling screws with tapping screw thread",
+    "designation": "ISO 15480 / DIN 7504",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso15481",
+    "file": "din-catalog/din_7504m.png",
+    "name": "Cross recessed pan head drilling screws with tapping screw thread",
+    "designation": "ISO 15481 / DIN 7504",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso15482",
+    "file": "din-catalog/din_7504o.png",
+    "name": "Cross recessed countersunk head drilling screws with tapping screw thread",
+    "designation": "ISO 15482 / DIN 7504",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso15483",
+    "file": "din-catalog/din_7504.png",
+    "name": "Cross recessed raised countersunk head drilling screws with tapping screw thread (ISO 15483:1999); German version EN ISO 15483:1999",
+    "designation": "ISO 15483 / DIN 7504",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "iso21670",
+    "file": "din-catalog/din_929.png",
+    "name": "Fasteners - Hexagon weld nuts with flange (ISO 21670:2014); German version EN ISO 21670:2014",
+    "designation": "ISO 21670 / DIN 929",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din22424",
+    "file": "din-catalog/din_22424.png",
+    "name": "Firedamp-proof and explosion-proof instruments; three-square bolts",
+    "designation": "DIN 22424",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din25201",
+    "file": "din-catalog/din_25201.png",
+    "name": "Railway vehicles; retention of bolted assemblies; in general",
+    "designation": "DIN 25201",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din70852",
+    "file": "din-catalog/din_70852.png",
+    "name": "Groove nuts; dimensions",
+    "designation": "DIN 70852",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din74361",
+    "file": "din-catalog/din_74361.png",
+    "name": "Disc wheels for motor vehicles and trailers - Part 1: Connection dimensions for bolt- and mixed centering",
+    "designation": "DIN 74361",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din80701",
+    "file": "din-catalog/din_80701.png",
+    "name": "Wing nuts",
+    "designation": "DIN 80701",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "din80705",
+    "file": "din-catalog/din_80705.png",
+    "name": "Thin nuts with small widths across flats - Coarse pitch thread, fine pitch thread",
+    "designation": "DIN 80705",
+    "addedAt": "2026-08-24T17:21:07Z",
+    "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
   }
 ]
