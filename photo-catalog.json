@@ -1,12 +1,5 @@
 [
   {
-    "id": "carriage-bolt",
-    "file": "carriage-bolt.png",
-    "name": "Carriage Bolt",
-    "designation": "ISO 8677",
-    "addedAt": "2026-08-22T15:08:24Z"
-  },
-  {
     "id": "thumb-screw",
     "file": "thumb-screw.png",
     "name": "Thumb Screw",
