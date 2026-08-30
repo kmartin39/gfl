@@ -64,8 +64,9 @@
         <input type="radio" name="imageSource"  value="none" />
         <input type="radio" name="printPath"    value="agent" />
         <input type="radio" name="printPath"    value="serial" checked />
-        <input type="radio" name="labelHeight"  value="12" checked />
-        <input type="radio" name="labelHeight"  value="9" />
+        <input type="radio" name="labelHeight"  value="12" />
+        <input type="radio" name="labelHeight"  value="9" checked />
+        <input type="radio" name="labelHeight"  value="6" />
         <input type="radio" name="stdPref"      value="auto" checked />
         <input type="radio" name="stdPref"      value="ISO" />
         <input type="radio" name="stdPref"      value="DIN" />
@@ -394,9 +395,11 @@
           <span class="preview-hdr-sep" aria-hidden="true"></span>
           <div class="height-toggle">
             <span class="mini-label">Height</span>
-            <button class="ht-btn ht-active" data-h="12">12mm</button>
+            <button class="ht-btn" data-h="12">12mm</button>
             <span class="ht-sep">/</span>
-            <button class="ht-btn" data-h="9">9mm</button>
+            <button class="ht-btn ht-active" data-h="9">9mm</button>
+            <span class="ht-sep">/</span>
+            <button class="ht-btn" data-h="6">6mm</button>
           </div>
         </div>
         <div class="stage">
@@ -408,7 +411,7 @@
           <canvas id="labelCanvas"></canvas>
         </div>
         <div class="preview-footer">
-          <span id="labelSizeInfo">35.0 × 12.0 mm</span>
+          <span id="labelSizeInfo">35.0 × 9.0 mm</span>
           <span id="labelPxInfo"></span>
           <span>Brother TZe tape</span>
           <span class="preview-footer-spacer"></span>

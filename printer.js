@@ -35,7 +35,7 @@ async function pollAgentStatus() {
 }
 
 function getTapeHeightMm() {
-  return parseInt(document.querySelector('input[name="labelHeight"]:checked')?.value || '12', 10);
+  return parseInt(document.querySelector('input[name="labelHeight"]:checked')?.value || '9', 10);
 }
 
 function getAutoCut() {
