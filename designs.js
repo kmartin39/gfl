@@ -204,18 +204,21 @@ function exportQueueIndividual() {
   if (printQueue.length === 0) return;
   printQueue.forEach((item, i) => {
     const filename = `${String(i + 1).padStart(2, '0')}_${sanitizeFilename(item.name)}.png`;
-    downloadCanvasAsPng(item.canvas, filename);
+    downloadCanvasAsPng(cropQueueItemToPrintableArea(item), filename);
   });
 }
 
 // Concatenates every queued label left-to-right into one continuous strip,
 // matching how the physical batch print chains labels on one uncut length
 // of tape. Canvases of differing height (mixed tape widths) are centred
-// vertically against the tallest one rather than stretched.
+// vertically against the tallest one rather than stretched. Each item is
+// cropped to its own printable area first, so the chain has no margin gaps
+// baked in between labels.
 function exportQueueChain() {
   if (printQueue.length === 0) return;
-  const maxH = Math.max(...printQueue.map(item => item.canvas.height));
-  const totalW = printQueue.reduce((sum, item) => sum + item.canvas.width, 0);
+  const cropped = printQueue.map(cropQueueItemToPrintableArea);
+  const maxH = Math.max(...cropped.map(c => c.height));
+  const totalW = cropped.reduce((sum, c) => sum + c.width, 0);
   const chain = document.createElement('canvas');
   chain.width = totalW;
   chain.height = maxH;
@@ -223,10 +226,10 @@ function exportQueueChain() {
   ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, totalW, maxH);
   let x = 0;
-  printQueue.forEach(item => {
-    const y = (maxH - item.canvas.height) / 2;
-    ctx.drawImage(item.canvas, x, y);
-    x += item.canvas.width;
+  cropped.forEach(c => {
+    const y = (maxH - c.height) / 2;
+    ctx.drawImage(c, x, y);
+    x += c.width;
   });
   downloadCanvasAsPng(chain, 'label_chain.png');
 }

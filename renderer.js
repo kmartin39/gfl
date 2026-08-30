@@ -407,11 +407,45 @@ const drawingImageCache = new Map();
 
 const qrCache = new Map();
 
+// Crops a rendered label canvas (which includes the hardware feed/cut margins
+// -- LABEL_MARGIN_LEFT/RIGHT/TOP -- on every side) down to just the printable
+// region: the same area the dashed guide rectangle in the preview marks.
+// scale is px/mm for THIS canvas; pass the value active when it was rendered,
+// not necessarily the current getPrintScale() (a print-queue canvas may have
+// been rendered at a different scale/size than what's selected now).
+function cropToPrintableArea(sourceCanvas, printableWidthMm, printableHeightMm, scale) {
+  const w = Math.round(printableWidthMm * scale);
+  const h = Math.round(printableHeightMm * scale);
+  const cropped = document.createElement('canvas');
+  cropped.width = w;
+  cropped.height = h;
+  const ctx = cropped.getContext('2d');
+  ctx.drawImage(
+    sourceCanvas,
+    Math.round(LABEL_MARGIN_LEFT * scale), Math.round(LABEL_MARGIN_TOP * scale), w, h,
+    0, 0, w, h
+  );
+  return cropped;
+}
+
+// Same crop, but deriving scale from a print-queue item's own stored
+// widthMm/heightMm and its already-rendered canvas -- so it's correct even
+// if the current Length/Height controls have since changed.
+function cropQueueItemToPrintableArea(item) {
+  const scale = item.canvas.width / item.widthMm;
+  const printableWidthMm = item.widthMm - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT;
+  return cropToPrintableArea(item.canvas, printableWidthMm, item.heightMm, scale);
+}
+
 async function downloadPng() {
   const canvas = await getPrintCanvas();
+  const scale = getPrintScale();
+  const printableWidthMm = getLabelLength() - LABEL_MARGIN_LEFT - LABEL_MARGIN_RIGHT;
+  const printableHeightMm = getLabelHeight();
+  const cropped = cropToPrintableArea(canvas, printableWidthMm, printableHeightMm, scale);
   const link = document.createElement('a');
   link.download = buildFilename() + '.png';
-  link.href = canvas.toDataURL('image/png');
+  link.href = cropped.toDataURL('image/png');
   link.click();
 }
 

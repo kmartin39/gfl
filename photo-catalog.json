@@ -1295,5 +1295,19 @@
     "designation": "DIN 80705",
     "addedAt": "2026-08-24T17:21:07Z",
     "source": "kamilpajak/gridfinity-label-generator (AGPL-3.0)"
+  },
+  {
+    "id": "wide-pan-head-self-tapping",
+    "file": "wide-pan-head-self-tapping.png",
+    "name": "wide pan head self tapping",
+    "designation": "",
+    "addedAt": "2026-08-30T02:26:07Z"
+  },
+  {
+    "id": "flat-head-self-tapping",
+    "file": "flat-head-self-tapping.png",
+    "name": "Flat head self tapping",
+    "designation": "",
+    "addedAt": "2026-08-30T02:29:31Z"
   }
 ]
