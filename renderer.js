@@ -437,6 +437,27 @@ function cropQueueItemToPrintableArea(item) {
   return cropToPrintableArea(item.canvas, printableWidthMm, item.heightMm, scale);
 }
 
+// Trims only the top/bottom margin, keeping the left/right feed and cut
+// margins intact -- for the chain export, where that horizontal margin is
+// exactly the gap a real printer's autocutter would use between labels on
+// one uncut length of tape, so it belongs in the image, unlike a single
+// label export where it's just unwanted whitespace.
+function cropTopBottomOnly(sourceCanvas, heightMm, scale) {
+  const w = sourceCanvas.width;
+  const h = Math.round(heightMm * scale);
+  const cropped = document.createElement('canvas');
+  cropped.width = w;
+  cropped.height = h;
+  const ctx = cropped.getContext('2d');
+  ctx.drawImage(sourceCanvas, 0, Math.round(LABEL_MARGIN_TOP * scale), w, h, 0, 0, w, h);
+  return cropped;
+}
+
+function cropQueueItemTopBottomOnly(item) {
+  const scale = item.canvas.width / item.widthMm;
+  return cropTopBottomOnly(item.canvas, item.heightMm, scale);
+}
+
 async function downloadPng() {
   const canvas = await getPrintCanvas();
   const scale = getPrintScale();

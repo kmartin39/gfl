@@ -1309,5 +1309,19 @@
     "name": "Flat head self tapping",
     "designation": "",
     "addedAt": "2026-08-30T02:29:31Z"
+  },
+  {
+    "id": "square-drive-washer-head-self-tapping-screw",
+    "file": "square-drive-washer-head-self-tapping-screw.png",
+    "name": "Square drive washer head self tapping screw",
+    "designation": "",
+    "addedAt": "2026-08-30T02:57:22Z"
+  },
+  {
+    "id": "square-drive-self-tapping-washer-head-screw",
+    "file": "square-drive-self-tapping-washer-head-screw.png",
+    "name": "Square drive self tapping washer head screw",
+    "designation": "",
+    "addedAt": "2026-08-30T03:03:12Z"
   }
 ]

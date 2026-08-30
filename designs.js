@@ -211,12 +211,12 @@ function exportQueueIndividual() {
 // Concatenates every queued label left-to-right into one continuous strip,
 // matching how the physical batch print chains labels on one uncut length
 // of tape. Canvases of differing height (mixed tape widths) are centred
-// vertically against the tallest one rather than stretched. Each item is
-// cropped to its own printable area first, so the chain has no margin gaps
-// baked in between labels.
+// vertically against the tallest one rather than stretched. Only the
+// top/bottom margin is trimmed per item -- the left/right margins stay, since
+// that's the real feed/cut gap a printer leaves between chained labels.
 function exportQueueChain() {
   if (printQueue.length === 0) return;
-  const cropped = printQueue.map(cropQueueItemToPrintableArea);
+  const cropped = printQueue.map(cropQueueItemTopBottomOnly);
   const maxH = Math.max(...cropped.map(c => c.height));
   const totalW = cropped.reduce((sum, c) => sum + c.width, 0);
   const chain = document.createElement('canvas');
